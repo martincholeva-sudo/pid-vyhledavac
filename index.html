@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="cs">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#0b5bd3">
+  <title>PID spojení</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="app-shell">
+    <header class="hero">
+      <div class="brand-mark">PID</div>
+      <div>
+        <p class="eyebrow">Praha a Pražská integrovaná doprava</p>
+        <h1>Vyhledávač spojení</h1>
+        <p class="hero-copy">Jednoduše odkud, kam a kdy.</p>
+      </div>
+    </header>
+
+    <section class="search-card" aria-labelledby="search-title">
+      <h2 id="search-title" class="sr-only">Vyhledat spojení</h2>
+
+      <div class="stop-grid">
+        <label class="field">
+          <span>Odkud</span>
+          <input id="fromInput" list="stopsList" autocomplete="off" placeholder="např. Sídliště Modřany">
+        </label>
+
+        <button id="swapBtn" class="swap-btn" type="button" title="Prohodit zastávky" aria-label="Prohodit zastávky">⇅</button>
+
+        <label class="field">
+          <span>Kam</span>
+          <input id="toInput" list="stopsList" autocomplete="off" placeholder="např. Anděl">
+        </label>
+      </div>
+
+      <datalist id="stopsList"></datalist>
+
+      <div class="time-grid">
+        <label class="field">
+          <span>Datum</span>
+          <input id="dateInput" type="date">
+        </label>
+        <label class="field">
+          <span>Odjezd</span>
+          <input id="timeInput" type="time" step="60">
+        </label>
+        <button id="searchBtn" class="primary-btn" type="button">Vyhledat spojení</button>
+      </div>
+
+      <p id="status" class="status" role="status" aria-live="polite"></p>
+    </section>
+
+    <section id="results" class="results" aria-live="polite"></section>
+
+    <footer class="footer">
+      <span>Data: Pražská integrovaná doprava (PID), licence dle zdroje.</span>
+      <span id="dataInfo"></span>
+    </footer>
+  </main>
+
+  <script type="module" src="app.js"></script>
+</body>
+</html>

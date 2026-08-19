@@ -1,0 +1,14 @@
+{
+  "name": "pid-vyhledavac",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build-data": "node scripts/build-data.mjs",
+    "serve": "npx serve ."
+  },
+  "dependencies": {
+    "adm-zip": "^0.5.16",
+    "csv-parse": "^5.6.0"
+  }
+}
